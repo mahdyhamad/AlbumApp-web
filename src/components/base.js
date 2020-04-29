@@ -1,16 +1,30 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
-class Base extends Component{
-    render(){
-        return (
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-5">
-            <i class="fas fa-compact-disc fa-4x mr-3"></i>
-            <a class="navbar-brand font-weight-bold">The Albums App</a>
-        </nav>
-    </div>
-        )
-    }
+class Base extends Component {
+  render() {
+    return (
+      <div className="header container">
+        <a href="">
+          <img
+            className="logo"
+            src={require("../assists/logo.png")}
+            width="100"
+            alt="logo"
+          />
+        </a>
+
+        <a href="#profile" className="profile-link">
+          <p className="profile-text mr-1">PROFILE</p>
+          <img
+            src={require("../assists/profile icon-01.png")}
+            width="60"
+            alt="logo"
+            className="profile"
+          />
+        </a>
+      </div>
+    );
+  }
 }
 
-export default Base; 
+export default Base;

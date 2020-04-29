@@ -1,20 +1,26 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import { gql } from "apollo-boost";
 import "./App.css";
 import AlbumList from "./components/AlbumList";
-import Base from "./components/base"
+import Base from "./components/base";
+import Footer from "./components/footer";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
+function App() {
+  const client = new ApolloClient({
+    uri: "http://127.0.0.1:8000/graphql/",
+  });
+
+  return (
+    <div className="App">
+      <ApolloProvider client={client}>
         <Base />
-        <div class="container">
-          <AlbumList />
-        </div>
-      </div>
-    );
-  }
+        <AlbumList />
+        <Footer />
+      </ApolloProvider>
+    </div>
+  );
 }
 
 export default App;
